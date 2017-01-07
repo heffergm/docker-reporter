@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  #  redis:
+  #  image: redis:3.2.5
+  #  networks:
+  #    - opentraffic
+  #  ports:
+  #    - "6379:6379"
+  #  expose:
+  #    - "6379"
+  matcher:
+    #build: .
+    image: mapzen/ot-matcher:latest
+    networks:
+      - opentraffic
+    ports:
+      - "8002:8002"
+    expose:
+      - "8002"
+    volumes:
+      - ${DATAPATH}:/data/valhalla
+
+networks:
+  opentraffic:
+    driver: bridge
