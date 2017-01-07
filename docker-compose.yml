@@ -10,8 +10,8 @@ services:
   #  expose:
   #    - "6379"
   matcher:
-    build: .
-    #image: mapzen/ot-matcher:latest
+    #build: .
+    image: mapzen/ot-matcher:latest
     networks:
       - opentraffic
     ports:
